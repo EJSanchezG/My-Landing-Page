@@ -105,7 +105,7 @@ export const translations = {
         {
           title: "Herramientas, Cloud & AI",
           icon: "fa-cubes",
-          skills: ["Docker", "Git / GitHub", "AWS", "Microsoft Azure", "Maven", "AI Coding Assistants (Copilot / LLMs)"]
+          skills: ["Docker", "Git / GitHub", "AWS", "Microsoft Azure", "Maven", "AI Coding Assistants"]
         }
       ]
     },
@@ -257,7 +257,7 @@ export const translations = {
         {
           title: "Tools, Cloud & AI",
           icon: "fa-cubes",
-          skills: ["Docker", "Git / GitHub", "AWS", "Microsoft Azure", "Maven", "AI Coding Assistants (Copilot / LLMs)"]
+          skills: ["Docker", "Git / GitHub", "AWS", "Microsoft Azure", "Maven", "AI Coding Assistants"]
         }
       ]
     },
