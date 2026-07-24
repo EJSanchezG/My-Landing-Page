@@ -10,7 +10,7 @@ Sitio web personal y portafolio profesional interactivo de **Eddie Jesus Ezequie
 - **Estilos en CSS Puro:** Dise?o desarrollado 100% con CSS Nativo (CSS Variables, Flexbox, CSS Grid y animaciones `@keyframes`). Sin uso de Tailwind ni Bootstrap.
 - **Estrategia Mobile First:** Dise?o responsivo optimizado para dispositivos moviles (`< 768px`), tablets (`>= 768px`) y escritorio (`>= 1024px`).
 - **Navegacion Movil Flotante (Bottom Navigation Bar):** En pantallas moviles, cuenta con una barra flotante en la parte inferior para navegacion intuitiva basada en el estandar moderno de aplicaciones moviles.
-- **Soporte Biling¨¹e (i18n):** Cambio dinamico de idioma entre **Espa?ol** e **Ingles**. Boton flotante interactivo con bandera de EE.UU. (para cambiar a ingles) y bandera de Peru (para regresar a espa?ol).
+- **Soporte BilingÂ¨Â¹e (i18n):** Cambio dinamico de idioma entre **Espa?ol** e **Ingles**. Boton flotante interactivo con bandera de EE.UU. (para cambiar a ingles) y bandera de Peru (para regresar a espa?ol).
 - **Ciclo de Imagenes con Animacion CSS:** Presentacion interactiva de fotos de perfil en la seccion "Sobre Mi" con transicion suave `crossfade` (fade-in / fade-out) mediante CSS puro.
 - **Integracion de Inteligencia Artificial:** Resaltado profesional sobre como la IA se aplica en el flujo de trabajo para optimizar y elevar la calidad en el desarrollo de aplicaciones software.
 - **Secciones Full-Screen (100vh):**
@@ -56,4 +56,4 @@ Sitio web personal y portafolio profesional interactivo de **Eddie Jesus Ezequie
 
 ---
 
-? 2026 Eddie Jesus Ezequiel Sanchez Guerrero. Todos los derechos reservados.
+Â© 2026 Eddie Jesus Ezequiel Sanchez Guerrero. Todos los derechos reservados.
