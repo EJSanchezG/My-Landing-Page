@@ -115,7 +115,7 @@ export const translations = {
       degree: {
         title: "Ingeniero Informático",
         institution: "Universidad Nacional de Piura",
-        detail: "Equivalencia a Grado de Bachiller Universitario en España.",
+        detail: "Equivalencia a Grado Universitario en España.",
         location: "Piura, Perú"
       },
       certificationsTitle: "Certificaciones Técnicas",
@@ -267,7 +267,7 @@ export const translations = {
       degree: {
         title: "Computer Engineer",
         institution: "Universidad Nacional de Piura",
-        detail: "Equivalence to Bachelor's Degree in Spain.",
+        detail: "Equivalence to a University Degree in Spain.",
         location: "Piura, Peru"
       },
       certificationsTitle: "Technical Certifications",
