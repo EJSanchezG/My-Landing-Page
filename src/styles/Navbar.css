@@ -1,0 +1,212 @@
+/* =============================================
+   MOBILE BOTTOM NAVIGATION BAR (< 1024px)
+   ============================================= */
+.bottom-nav {
+  display: flex;
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  background: rgba(10, 16, 28, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 242, 254, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 6px 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 242, 254, 0.1);
+  width: auto;
+  max-width: calc(100vw - 32px);
+  gap: 2px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.3px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.bottom-nav-item i {
+  font-size: 1.15rem;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.bottom-nav-item span {
+  font-size: 0.6rem;
+  opacity: 0.8;
+}
+
+.bottom-nav-item:hover,
+.bottom-nav-item.active {
+  color: var(--accent-cyan);
+  background: rgba(0, 242, 254, 0.08);
+}
+
+.bottom-nav-item:hover i,
+.bottom-nav-item.active i {
+  transform: translateY(-1px);
+}
+
+.bottom-nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+}
+
+/* Hide bottom nav on tablet+ (>= 1024px) */
+@media (min-width: 1024px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+/* =============================================
+   DESKTOP NAVBAR (>= 1024px)
+   ============================================= */
+.desktop-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background: rgba(10, 16, 28, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 242, 254, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  height: var(--navbar-height-desktop);
+  padding: 0 2rem;
+}
+
+@media (min-width: 1024px) {
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.desktop-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container-max-width);
+}
+
+.desktop-nav-brand {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.desktop-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.desktop-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  position: relative;
+  font-family: var(--font-sans);
+}
+
+.desktop-nav-link i {
+  font-size: 0.8rem;
+  transition: color var(--transition-fast);
+}
+
+.desktop-nav-link:hover,
+.desktop-nav-link.active {
+  color: var(--accent-cyan);
+  background: rgba(0, 242, 254, 0.06);
+}
+
+.desktop-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+}
+
+/* =============================================
+   SCROLL INDICATOR
+   ============================================= */
+.scroll-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.scroll-indicator i {
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+}
+
+@keyframes scrollPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+}
