@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="20" fill="#0b0f17"/>
+  <path d="M25 30 H75 V40 H40 V48 H70 V58 H40 V70 H75 V80 H25 Z" fill="#00f2fe"/>
+  <text x="50" y="65" font-family="'JetBrains Mono', monospace" font-size="45" font-weight="bold" fill="#00f2fe" text-anchor="middle">ES</text>
+</svg>
