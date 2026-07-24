@@ -8,16 +8,16 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
-  background: rgba(10, 16, 28, 0.92);
+  background: rgba(10, 16, 28, 0.94);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(0, 242, 254, 0.15);
-  border-radius: var(--radius-lg);
-  padding: 6px 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 242, 254, 0.1);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: var(--radius-full);
+  padding: 6px 10px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 242, 254, 0.15);
   width: auto;
-  max-width: calc(100vw - 32px);
-  gap: 2px;
+  max-width: calc(100vw - 20px);
+  gap: 4px;
   align-items: center;
   justify-content: center;
 }
@@ -27,18 +27,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  padding: 8px 14px;
-  border-radius: var(--radius-sm);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   color: var(--text-muted);
   text-decoration: none;
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  font-weight: 500;
   transition: all var(--transition-fast);
-  letter-spacing: 0.3px;
   position: relative;
-  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .bottom-nav-item i {
@@ -46,33 +42,42 @@
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
-.bottom-nav-item span {
-  font-size: 0.6rem;
-  opacity: 0.8;
+.bottom-nav-label {
+  display: none;
+}
+
+@media (min-width: 540px) {
+  .bottom-nav {
+    padding: 6px 12px;
+    gap: 6px;
+  }
+
+  .bottom-nav-item {
+    width: auto;
+    height: auto;
+    border-radius: var(--radius-sm);
+    padding: 6px 12px;
+    gap: 2px;
+  }
+
+  .bottom-nav-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    opacity: 0.85;
+  }
 }
 
 .bottom-nav-item:hover,
 .bottom-nav-item.active {
   color: var(--accent-cyan);
-  background: rgba(0, 242, 254, 0.08);
+  background: rgba(0, 242, 254, 0.12);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.25);
 }
 
 .bottom-nav-item:hover i,
 .bottom-nav-item.active i {
-  transform: translateY(-1px);
-}
-
-.bottom-nav-item.active::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 2px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-  box-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+  transform: scale(1.15);
+  color: var(--accent-cyan);
 }
 
 /* Hide bottom nav on tablet+ (>= 1024px) */

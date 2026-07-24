@@ -25,9 +25,10 @@ export const Navbar = () => {
             href={`#${item.id}`}
             className="bottom-nav-item"
             aria-label={t.nav[item.labelKey]}
+            title={t.nav[item.labelKey]}
           >
             <i className={`fa-solid ${item.icon}`}></i>
-            <span>{t.nav[item.labelKey]}</span>
+            <span className="bottom-nav-label">{t.nav[item.labelKey]}</span>
           </a>
         ))}
       </nav>
