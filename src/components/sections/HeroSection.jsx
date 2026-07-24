@@ -28,7 +28,7 @@ export const HeroSection = () => {
             {t.hero.ctaSecondary}
           </a>
           <a 
-            href="/CV - Eddie Sanchez.pdf" 
+            href="./CV - Eddie Sanchez.pdf" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-resume"
