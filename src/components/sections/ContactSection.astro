@@ -1,0 +1,96 @@
+---
+import { translations } from '../../data/translations.js';
+
+const esContact = translations.es.contact;
+const esNav = translations.es.nav;
+---
+
+<section id="contacto" class="section-fullscreen" x-data>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-envelope"></i>
+        <span x-text="$store.i18n.t.nav.contacto">{esNav.contacto}</span>
+      </div>
+      <h2 class="section-title" x-text="$store.i18n.t.contact.sectionTitle">{esContact.sectionTitle}</h2>
+      <p class="section-subtitle" x-text="$store.i18n.t.contact.subtitle">{esContact.subtitle}</p>
+    </div>
+
+    <div class="contact-container-inner">
+      <div class="contact-grid">
+        <!-- Email Contact Card - Copy to Clipboard -->
+        <div class="contact-card" x-data="{ copied: false }">
+          <div class="contact-icon-wrapper">
+            <i class="fa-solid fa-envelope-open-text"></i>
+          </div>
+          <span class="contact-label" x-text="$store.i18n.t.contact.labels.email">{esContact.labels.email}</span>
+          <button 
+            type="button"
+            @click="if (navigator.clipboard) { navigator.clipboard.writeText($store.i18n.t.contact.email); copied = true; setTimeout(() => copied = false, 2500); }"
+            class="contact-link copy-btn"
+            :class="{ 'copied': copied }"
+            :aria-label="copied ? $store.i18n.t.contact.labels.emailCopied : $store.i18n.t.contact.labels.copyEmail"
+          >
+            <template x-if="copied">
+              <span>
+                <i class="fa-solid fa-check"></i>
+                <span x-text="$store.i18n.t.contact.labels.emailCopied">{esContact.labels.emailCopied}</span>
+              </span>
+            </template>
+            <template x-if="!copied">
+              <span>
+                <i class="fa-solid fa-copy"></i>
+                <span x-text="$store.i18n.t.contact.labels.copyEmail">{esContact.labels.copyEmail}</span>
+              </span>
+            </template>
+          </button>
+        </div>
+
+        <!-- WhatsApp Contact Card -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <span class="contact-label" x-text="$store.i18n.t.contact.labels.phone">{esContact.labels.phone}</span>
+          <a 
+            :href="`https://wa.me/${$store.i18n.t.contact.whatsappNumber}?text=${encodeURIComponent($store.i18n.t.contact.whatsappMessage)}`" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="contact-link"
+          >
+            <span x-text="$store.i18n.t.contact.labels.sendWhatsapp">{esContact.labels.sendWhatsapp}</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </a>
+        </div>
+
+        <!-- Location Contact Card -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <span class="contact-label" x-text="$store.i18n.t.contact.labels.location">{esContact.labels.location}</span>
+          <span class="contact-link contact-location-link">
+            Piura, PE
+          </span>
+        </div>
+
+        <!-- GitHub Profile Contact Card -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <span class="contact-label" x-text="$store.i18n.t.contact.labels.github">{esContact.labels.github}</span>
+          <a 
+            :href="$store.i18n.t.contact.github" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="contact-link"
+          >
+            GitHub
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+---
+import { translations } from '../data/translations.js';
+
+const NAV_ITEMS = [
+  { id: 'inicio', icon: 'fa-house', labelKey: 'inicio' },
+  { id: 'sobre-mi', icon: 'fa-user', labelKey: 'sobreMi' },
+  { id: 'experiencia', icon: 'fa-briefcase', labelKey: 'experiencia' },
+  { id: 'habilidades', icon: 'fa-code', labelKey: 'habilidades' },
+  { id: 'formacion', icon: 'fa-graduation-cap', labelKey: 'formacion' },
+  { id: 'contacto', icon: 'fa-envelope', labelKey: 'contacto' }
+];
+
+const esNav = translations.es.nav;
+---
+
+<header class="site-header" x-data>
+  <!-- Mobile Bottom Navigation Bar (< 1024px) -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    {NAV_ITEMS.map((item) => (
+      <a
+        href={`#${item.id}`}
+        class="bottom-nav-item"
+        :aria-label={`$store.i18n.t.nav.${item.labelKey}`}
+        :title={`$store.i18n.t.nav.${item.labelKey}`}
+      >
+        <i class={`fa-solid ${item.icon}`}></i>
+        <span class="bottom-nav-label" x-text={`$store.i18n.t.nav.${item.labelKey}`}>
+          {esNav[item.labelKey]}
+        </span>
+      </a>
+    ))}
+  </nav>
+
+  <!-- Desktop Top Navigation Bar (>= 1024px) -->
+  <nav class="desktop-nav" aria-label="Desktop navigation">
+    <div class="desktop-nav-inner">
+      <a href="#inicio" class="desktop-nav-brand">
+        &lt;Eddie.Sanchez /&gt;
+      </a>
+      <ul class="desktop-nav-links">
+        {NAV_ITEMS.map((item) => (
+          <li>
+            <a
+              href={`#${item.id}`}
+              class="desktop-nav-link"
+              :aria-label={`$store.i18n.t.nav.${item.labelKey}`}
+            >
+              <i class={`fa-solid ${item.icon}`}></i>
+              <span x-text={`$store.i18n.t.nav.${item.labelKey}`}>
+                {esNav[item.labelKey]}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</header>

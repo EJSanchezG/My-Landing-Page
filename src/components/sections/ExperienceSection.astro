@@ -1,0 +1,60 @@
+---
+import { translations } from '../../data/translations.js';
+
+const esExp = translations.es.experience;
+const esNav = translations.es.nav;
+---
+
+<section id="experiencia" class="section-fullscreen" x-data>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-briefcase"></i>
+        <span x-text="$store.i18n.t.nav.experiencia">{esNav.experiencia}</span>
+      </div>
+      <h2 class="section-title" x-text="$store.i18n.t.experience.sectionTitle">{esExp.sectionTitle}</h2>
+      <p class="section-subtitle" x-text="$store.i18n.t.experience.subtitle">{esExp.subtitle}</p>
+    </div>
+
+    <div class="experience-timeline">
+      <template x-for="(job, index) in $store.i18n.t.experience.jobs" :key="index">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="job-header">
+              <h3 class="job-role" x-text="job.role"></h3>
+              <div class="job-meta">
+                <span class="job-company">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <span x-text="job.company"></span>
+                </span>
+                <span class="job-period">
+                  <i class="fa-regular fa-calendar-days"></i>
+                  <span x-text="job.period"></span>
+                </span>
+                <span class="job-location">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span x-text="job.location"></span>
+                </span>
+              </div>
+            </div>
+
+            <p class="job-desc" x-text="job.description"></p>
+
+            <ul class="job-achievements">
+              <template x-for="(ach, aIndex) in job.achievements" :key="aIndex">
+                <li x-text="ach"></li>
+              </template>
+            </ul>
+
+            <div class="job-techs">
+              <template x-for="(tech, tIndex) in job.technologies" :key="tIndex">
+                <span class="tech-tag" x-text="tech"></span>
+              </template>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>

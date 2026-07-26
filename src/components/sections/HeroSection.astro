@@ -1,0 +1,44 @@
+---
+import { translations } from '../../data/translations.js';
+
+const esHero = translations.es.hero;
+---
+
+<section id="inicio" class="section-fullscreen hero-section" x-data>
+  <div class="container hero-container">
+    <div class="hero-badge" data-aos="fade-down">
+      <i class="fa-solid fa-circle"></i>
+      <span x-text="$store.i18n.t.hero.badge">{esHero.badge}</span>
+    </div>
+    
+    <p class="hero-greeting" x-text="$store.i18n.t.hero.greeting">{esHero.greeting}</p>
+    <h1 class="hero-name" x-text="$store.i18n.t.hero.name">{esHero.name}</h1>
+    <h2 class="hero-title" x-text="$store.i18n.t.hero.title">{esHero.title}</h2>
+    <p class="hero-tagline" x-text="$store.i18n.t.hero.tagline">{esHero.tagline}</p>
+    
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn-primary">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span x-text="$store.i18n.t.hero.ctaPrimary">{esHero.ctaPrimary}</span>
+      </a>
+      <a href="#experiencia" class="btn-secondary">
+        <i class="fa-solid fa-briefcase"></i>
+        <span x-text="$store.i18n.t.hero.ctaSecondary">{esHero.ctaSecondary}</span>
+      </a>
+      <a 
+        href="./CV - Eddie Sanchez.pdf" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="btn-resume"
+      >
+        <i class="fa-solid fa-file-pdf"></i>
+        <span x-text="$store.i18n.t.hero.ctaResume">{esHero.ctaResume}</span>
+      </a>
+    </div>
+
+    <div class="scroll-indicator">
+      <span x-text="$store.i18n.t.hero.scroll">{esHero.scroll}</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </div>
+</section>

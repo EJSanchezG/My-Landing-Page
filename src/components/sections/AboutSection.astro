@@ -1,0 +1,54 @@
+---
+import ImageCycler from '../ImageCycler.astro';
+import { translations } from '../../data/translations.js';
+
+const esAbout = translations.es.about;
+const esNav = translations.es.nav;
+---
+
+<section id="sobre-mi" class="section-fullscreen" x-data>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-user-gear"></i>
+        <span x-text="$store.i18n.t.nav.sobreMi">{esNav.sobreMi}</span>
+      </div>
+      <h2 class="section-title" x-text="$store.i18n.t.about.sectionTitle">{esAbout.sectionTitle}</h2>
+      <p class="section-subtitle" x-text="$store.i18n.t.about.subtitle">{esAbout.subtitle}</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text-content">
+        <p class="about-p" x-text="$store.i18n.t.about.paragraph1">{esAbout.paragraph1}</p>
+        <p class="about-p" x-text="$store.i18n.t.about.paragraph2">{esAbout.paragraph2}</p>
+        
+        <div class="about-ai-card">
+          <div class="about-ai-header">
+            <i class="fa-solid fa-brain-circuit"></i>
+            <h3 x-text="$store.i18n.t.about.aiHighlightTitle">{esAbout.aiHighlightTitle}</h3>
+          </div>
+          <p class="about-ai-p" x-text="$store.i18n.t.about.aiHighlightText">{esAbout.aiHighlightText}</p>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-number" x-text="$store.i18n.t.about.stats.yearsExp">{esAbout.stats.yearsExp}</span>
+            <span class="stat-desc" x-text="$store.i18n.t.about.stats.yearsExpDesc">{esAbout.stats.yearsExpDesc}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" x-text="$store.i18n.t.about.stats.fullStack">{esAbout.stats.fullStack}</span>
+            <span class="stat-desc" x-text="$store.i18n.t.about.stats.fullStackDesc">{esAbout.stats.fullStackDesc}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" x-text="$store.i18n.t.about.stats.cleanArch">{esAbout.stats.cleanArch}</span>
+            <span class="stat-desc" x-text="$store.i18n.t.about.stats.cleanArchDesc">{esAbout.stats.cleanArchDesc}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-image-container">
+        <ImageCycler />
+      </div>
+    </div>
+  </div>
+</section>

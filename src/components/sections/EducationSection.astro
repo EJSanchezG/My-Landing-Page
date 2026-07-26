@@ -1,0 +1,57 @@
+---
+import { translations } from '../../data/translations.js';
+
+const esEdu = translations.es.education;
+const esNav = translations.es.nav;
+---
+
+<section id="formacion" class="section-fullscreen" x-data>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span x-text="$store.i18n.t.nav.formacion">{esNav.formacion}</span>
+      </div>
+      <h2 class="section-title" x-text="$store.i18n.t.education.sectionTitle">{esEdu.sectionTitle}</h2>
+      <p class="section-subtitle" x-text="$store.i18n.t.education.subtitle">{esEdu.subtitle}</p>
+    </div>
+
+    <div class="education-layout">
+      <!-- Main Degree Card -->
+      <div class="degree-card">
+        <div class="degree-icon">
+          <i class="fa-solid fa-user-graduate"></i>
+        </div>
+        <h3 class="degree-title" x-text="$store.i18n.t.education.degree.title">{esEdu.degree.title}</h3>
+        <h4 class="degree-institution" x-text="$store.i18n.t.education.degree.institution">{esEdu.degree.institution}</h4>
+        <p class="degree-detail" x-text="$store.i18n.t.education.degree.detail">{esEdu.degree.detail}</p>
+        <div class="degree-location">
+          <i class="fa-solid fa-location-dot"></i>
+          <span x-text="$store.i18n.t.education.degree.location">{esEdu.degree.location}</span>
+        </div>
+      </div>
+
+      <!-- Certifications Panel -->
+      <div class="certs-panel">
+        <h3 class="certs-title-sub">
+          <i class="fa-solid fa-award"></i>
+          <span x-text="$store.i18n.t.education.certificationsTitle">{esEdu.certificationsTitle}</span>
+        </h3>
+        
+        <div class="certs-grid">
+          <template x-for="(cert, index) in $store.i18n.t.education.certifications" :key="index">
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div class="cert-info">
+                <span class="cert-name" x-text="cert.name"></span>
+                <span class="cert-issuer" x-text="cert.issuer"></span>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

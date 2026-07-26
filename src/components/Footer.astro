@@ -1,0 +1,12 @@
+---
+import { translations } from '../data/translations.js';
+
+const esFooter = translations.es.footer;
+---
+
+<footer class="main-footer" x-data>
+  <div class="footer-inner">
+    <span class="footer-name">Eddie Jesus Ezequiel Sanchez Guerrero</span>
+    <span>© 2026 | <span x-text="$store.i18n.t.footer.rights">{esFooter.rights}</span></span>
+  </div>
+</footer>

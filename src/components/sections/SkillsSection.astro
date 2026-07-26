@@ -1,0 +1,38 @@
+---
+import { translations } from '../../data/translations.js';
+
+const esSkills = translations.es.skills;
+const esNav = translations.es.nav;
+---
+
+<section id="habilidades" class="section-fullscreen" x-data>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <i class="fa-solid fa-code"></i>
+        <span x-text="$store.i18n.t.nav.habilidades">{esNav.habilidades}</span>
+      </div>
+      <h2 class="section-title" x-text="$store.i18n.t.skills.sectionTitle">{esSkills.sectionTitle}</h2>
+      <p class="section-subtitle" x-text="$store.i18n.t.skills.subtitle">{esSkills.subtitle}</p>
+    </div>
+
+    <div class="skills-grid">
+      <template x-for="(category, index) in $store.i18n.t.skills.categories" :key="index">
+        <div class="skills-card">
+          <div class="skills-card-header">
+            <i class="fa-solid" :class="category.icon"></i>
+            <h3 class="skills-card-title" x-text="category.title"></h3>
+          </div>
+          <ul class="skills-list">
+            <template x-for="(skill, sIndex) in category.skills" :key="sIndex">
+              <li class="skill-badge">
+                <i class="fa-solid fa-circle-check"></i>
+                <span x-text="skill"></span>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>

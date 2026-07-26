@@ -1,0 +1,71 @@
+---
+---
+<div class="language-toggle-container" x-data>
+  <button 
+    class="language-toggle-btn" 
+    @click="$store.i18n.toggle()"
+    :title="$store.i18n.lang === 'es' ? 'Switch to English' : 'Cambiar a Español'"
+    :aria-label="$store.i18n.lang === 'es' ? 'Switch to English' : 'Cambiar a Español'"
+  >
+    <div class="flag-icon">
+      <template x-if="$store.i18n.lang === 'es'">
+        <svg viewBox="0 0 640 480" width="100%" height="100%">
+          <path fill="#bd3d44" d="M0 0h640v480H0z"/>
+          <path stroke="#fff" stroke-width="37" d="M0 55.4h640M0 129.2h640M0 203h640M0 276.9h640M0 350.8h640M0 424.6h640"/>
+          <path fill="#192f5d" d="M0 0h256v258.5H0z"/>
+          <g fill="#fff">
+            <circle cx="25" cy="25" r="8"/>
+            <circle cx="76" cy="25" r="8"/>
+            <circle cx="128" cy="25" r="8"/>
+            <circle cx="179" cy="25" r="8"/>
+            <circle cx="230" cy="25" r="8"/>
+            <circle cx="51" cy="51" r="8"/>
+            <circle cx="102" cy="51" r="8"/>
+            <circle cx="153" cy="51" r="8"/>
+            <circle cx="204" cy="51" r="8"/>
+            <circle cx="25" cy="77" r="8"/>
+            <circle cx="76" cy="77" r="8"/>
+            <circle cx="128" cy="77" r="8"/>
+            <circle cx="179" cy="77" r="8"/>
+            <circle cx="230" cy="77" r="8"/>
+            <circle cx="51" cy="103" r="8"/>
+            <circle cx="102" cy="103" r="8"/>
+            <circle cx="153" cy="103" r="8"/>
+            <circle cx="204" cy="103" r="8"/>
+            <circle cx="25" cy="129" r="8"/>
+            <circle cx="76" cy="129" r="8"/>
+            <circle cx="128" cy="129" r="8"/>
+            <circle cx="179" cy="129" r="8"/>
+            <circle cx="230" cy="129" r="8"/>
+            <circle cx="51" cy="155" r="8"/>
+            <circle cx="102" cy="155" r="8"/>
+            <circle cx="153" cy="155" r="8"/>
+            <circle cx="204" cy="155" r="8"/>
+            <circle cx="25" cy="181" r="8"/>
+            <circle cx="76" cy="181" r="8"/>
+            <circle cx="128" cy="181" r="8"/>
+            <circle cx="179" cy="181" r="8"/>
+            <circle cx="230" cy="181" r="8"/>
+            <circle cx="51" cy="207" r="8"/>
+            <circle cx="102" cy="207" r="8"/>
+            <circle cx="153" cy="207" r="8"/>
+            <circle cx="204" cy="207" r="8"/>
+            <circle cx="25" cy="233" r="8"/>
+            <circle cx="76" cy="233" r="8"/>
+            <circle cx="128" cy="233" r="8"/>
+            <circle cx="179" cy="233" r="8"/>
+            <circle cx="230" cy="233" r="8"/>
+          </g>
+        </svg>
+      </template>
+      <template x-if="$store.i18n.lang === 'en'">
+        <svg viewBox="0 0 640 480" width="100%" height="100%">
+          <path fill="#D91023" d="M0 0h213.3v480H0z"/>
+          <path fill="#FFFFFF" d="M213.3 0h213.4v480H213.3z"/>
+          <path fill="#D91023" d="M426.7 0H640v480H426.7z"/>
+        </svg>
+      </template>
+    </div>
+    <span class="lang-code" x-text="$store.i18n.lang === 'es' ? 'EN' : 'ES'">EN</span>
+  </button>
+</div>

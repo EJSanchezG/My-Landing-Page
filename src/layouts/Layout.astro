@@ -1,22 +1,47 @@
+---
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '../styles/variables.css';
+import '../styles/global.css';
+import '../styles/Navbar.css';
+import '../styles/Hero.css';
+import '../styles/About.css';
+import '../styles/Experience.css';
+import '../styles/Skills.css';
+import '../styles/Education.css';
+import '../styles/Contact.css';
+import '../styles/ImageCycler.css';
+import '../styles/LanguageToggle.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Eddie Jesus Ezequiel Sanchez Guerrero | Computer Engineer",
+  description = "Personal Landing Page & Portfolio of Eddie Jesus Ezequiel Sanchez Guerrero - Computer Engineer, Java Backend & React Frontend Developer."
+} = Astro.props;
+---
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0f172a" />
-    <title>Eddie Jesus Ezequiel Sanchez Guerrero | Computer Engineer</title>
-    <meta name="description" content="Personal Landing Page & Portfolio of Eddie Jesus Ezequiel Sanchez Guerrero - Computer Engineer, Java Backend & React Frontend Developer." />
+    <title>{title}</title>
+    <meta name="description" content={description} />
     
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Eddie Jesus Ezequiel Sanchez Guerrero | Computer Engineer" />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content="Computer Engineer specializing in Java Spring Boot, React 19, financial software modernization, and Artificial Intelligence integration." />
     <meta property="og:site_name" content="Eddie Sanchez Portfolio" />
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Eddie Jesus Ezequiel Sanchez Guerrero | Computer Engineer" />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content="Computer Engineer specializing in Java Spring Boot, React 19, financial software modernization, and Artificial Intelligence integration." />
     
     <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
@@ -24,11 +49,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome Kit -->
+    <!-- Font Awesome 7 CDN Kit Fallback -->
     <script src="https://kit.fontawesome.com/affe7ab5b5.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <slot />
   </body>
 </html>
